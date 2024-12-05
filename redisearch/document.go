@@ -105,8 +105,12 @@ func loadDocument(arr []interface{}, idIdx, scoreIdx, payloadIdx, fieldsIdx int)
 	}
 
 	if fieldsIdx > 0 {
-		lst := arr[idIdx+fieldsIdx].([]interface{})
-		doc.loadFields(lst)
+		if len(arr) > idIdx+fieldsIdx {
+			if lstI := arr[idIdx+fieldsIdx]; lstI != nil {
+				lst := arr[idIdx+fieldsIdx].([]interface{})
+				doc.loadFields(lst)
+			}
+		}
 	}
 
 	return doc, nil
