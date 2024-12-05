@@ -109,7 +109,11 @@ func loadDocument(arr []interface{}, idIdx, scoreIdx, payloadIdx, fieldsIdx int)
 			if lstI := arr[idIdx+fieldsIdx]; lstI != nil {
 				lst := arr[idIdx+fieldsIdx].([]interface{})
 				doc.loadFields(lst)
+			} else {
+				fmt.Println(fmt.Sprintf("redissearch document nil for index:%d", idIdx+fieldsIdx))
 			}
+		} else {
+			fmt.Println("redissearch document array size less than target index")
 		}
 	}
 
