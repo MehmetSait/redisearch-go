@@ -9,7 +9,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/RediSearch/redisearch-go/v2/redisearch"
+	"github.com/MehmetSait/redisearch-go/redisearch"
 	"github.com/gomodule/redigo/redis"
 )
 
@@ -201,7 +201,7 @@ func ExampleNewClientFromPool() {
 	c.Drop()
 }
 
-//Example of how to establish an SSL connection from your app to the RedisAI Server
+// Example of how to establish an SSL connection from your app to the RedisAI Server
 func ExampleNewClientFromPool_ssl() {
 	// Consider the following helper methods that provide us with the connection details (host and password)
 	// and the paths for:
